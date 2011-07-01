@@ -17,15 +17,9 @@ module Mbanker
     end
   
     def visit path_name
-      p path_name
       @agent.get(BASE_URI + PATHS[path_name])
     end
 
-    def visit_by_post path_name, parameters
-      submit_navigation_form "/#{PATHS[path_name]}", parameters
-    end
-
-    
     def click link_or_button
       action = extract_action link_or_button
       parameters = extract_post_parameters link_or_button
