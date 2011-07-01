@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Michał Taszycki"]
   s.email       = ["mtaszycki@gmail.com"]
   s.homepage    = "https://github.com/mehowte/mbanker"
-  s.summary     = %q{missing API for online mBank services}
+  s.summary     = %q{Missing API for online mBank services}
   s.description = %q{Provides access to online mBank services.}
 
   s.rubyforge_project = "mbanker"
