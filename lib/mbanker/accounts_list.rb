@@ -11,9 +11,9 @@ module Mbanker
     def fetch_accounts
       @accounts = []
       @crawler.visit :accounts_list
-      full_names_and_numbers = @crawler.search('.Account a').map(&:text)
-      balances = @crawler.search('.Amount a').map(&:text)
-      availables = @crawler.search('.Amount span').map(&:text)
+      full_names_and_numbers = @crawler.extract_texts('.Account a')
+      balances = @crawler.extract_texts('.Amount a')
+      availables = @crawler.extract_texts('.Amount span')
       accounts_count = full_names_and_numbers.count
       accounts_count.times do |index|
         attributes = {

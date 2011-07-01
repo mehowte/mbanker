@@ -25,16 +25,16 @@ module Mbanker
 
     def fetch_details
       visit_account_details 
-      extract_label_and_name @crawler.search('fieldset:nth-child(2) .content').first.text
-      @number = @crawler.search('fieldset:nth-child(3) .content').first.text
-      @iban_number = @crawler.search('fieldset:nth-child(4) .content').first.text
-      @bic_number = @crawler.search('fieldset:nth-child(5) .content').first.text
-      @account_type = @crawler.search('fieldset:nth-child(6) .content').first.text
-      @owner = @crawler.search('fieldset:nth-child(7) li').first.text
-      @plenipotentiary = @crawler.search('fieldset:nth-child(8) li').first.text
-      @client_role = @crawler.search('fieldset:nth-child(9) .content').first.text
-      @balance = @crawler.search('fieldset:nth-child(10) .amount').first.text
-      @available_money = @crawler.search('fieldset:nth-child(11) .amount').first.text
+      extract_label_and_name @crawler.extract_text('fieldset:nth-child(2) .content')
+      @number = @crawler.extract_text('fieldset:nth-child(3) .content')
+      @iban_number = @crawler.extract_text('fieldset:nth-child(4) .content')
+      @bic_number = @crawler.extract_text('fieldset:nth-child(5) .content')
+      @account_type = @crawler.extract_text('fieldset:nth-child(6) .content')
+      @owner = @crawler.extract_text('fieldset:nth-child(7) li')
+      @plenipotentiary = @crawler.extract_text('fieldset:nth-child(8) li')
+      @client_role = @crawler.extract_text('fieldset:nth-child(9) .content')
+      @balance = @crawler.extract_text('fieldset:nth-child(10) .amount')
+      @available_money = @crawler.extract_text('fieldset:nth-child(11) .amount')
     end
 
 

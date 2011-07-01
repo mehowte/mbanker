@@ -32,6 +32,18 @@ module Mbanker
       @crawler.can_find? selector
     end
 
+    def find_first selector
+      @crawler.find_first selector
+    end
+
+    def extract_text selector
+      @crawler.extract_text selector
+    end
+
+    def extract_texts selector
+      @crawler.extract_texts selector
+    end
+
     def get_form
       @crawler.get_form
     end

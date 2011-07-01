@@ -57,6 +57,19 @@ module Mbanker
       @agent.page.search(selector)
     end
 
+    def find_first selector
+      @agent.page.at selector
+    end
+
+    def extract_text selector
+      element = find_first(selector)
+      element ? element.text.strip : ''
+    end
+
+    def extract_texts selector
+      search(selector).map(&:text).map(&:strip)
+    end
+
     def can_find? selector
       not search(selector).empty?
     end
