@@ -38,6 +38,7 @@ session.accounts.each do |account|
   puts "    plenipotentiary: #{account.plenipotentiary}"
 end
 
+# changing name of the account
 session.accounts.first.change_name "MONEY JAR"
 
 ```
@@ -49,8 +50,6 @@ Development and testing
     cd mbanker
     bundle
     bundle exec rspec spec
-
-
 
 License
 -------
